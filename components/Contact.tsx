@@ -109,8 +109,8 @@ const Contact: React.FC = () => {
             <div className="relative bg-surface-dark rounded-2xl overflow-hidden border border-border-gray shadow-2xl">
               <img 
                 alt="Coach Leo Foffani" 
-                className="w-full h-[700px] object-cover object-center filter contrast-[1.05] saturate-[1.1] group-hover:scale-105 transition-all duration-[2000ms]" 
-                src={IMAGES.leo}
+                className="w-full h-[700px] object-cover object-center filter contrast-[1.05] saturate-[1.1] group-hover:scale-105 transition-all duration-[2000ms]"         
+                src={IMAGES.leo} 
                 loading="eager"
               />
               
