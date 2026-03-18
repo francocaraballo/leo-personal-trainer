@@ -70,7 +70,7 @@ const Contact: React.FC = () => {
               <input 
                 className="w-full bg-surface-dark border-border-gray rounded-lg focus:border-primary focus:ring-1 focus:ring-primary text-white p-5 h-16 transition-all outline-none" 
                 placeholder="+54 9 ..." 
-                type="tel"
+                type="number"
                 required
                 value={formData.phone}
                 onChange={(e) => setFormData({...formData, phone: e.target.value})}

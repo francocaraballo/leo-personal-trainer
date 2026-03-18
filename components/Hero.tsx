@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
           ALCANZÁ TU<br/><span className="text-primary">MÁXIMO NIVEL</span>
         </h1>
         <p className="text-gray-200 text-lg md:text-2xl max-w-2xl mx-auto mb-12 font-medium animate-fade-in-up-delay opacity-0 [animation-fill-mode:forwards]">
-          Transformamos tu esfuerzo en resultados reales. Con MOVE, el entrenamiento funcional se adapta a tu vida, no al revés.
+          Transformamos tu esfuerzo en resultados reales. Con PEAK, el entrenamiento funcional se adapta a tu vida, no al revés.
         </p>
         <div className="flex flex-col sm:flex-row gap-5 justify-center animate-fade-in-up-delay opacity-0 [animation-fill-mode:forwards]">
           <a 
