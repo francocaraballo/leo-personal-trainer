@@ -8,9 +8,16 @@ import { Review, Plan } from './types';
  */
 export const IMAGES = {
   hero: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop",
-  review1: "https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1974&auto=format&fit=crop",
-  review2: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1974&auto=format&fit=crop",
-  review3: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop",
+  review1: "/reviews/man-blue-shirt.png",
+  review2: "/reviews/man-green-shirt.png",
+  review3: "/reviews/man-pink-shirt.png",
+  review4: "/reviews/man-purple-shirt.png",
+  review5: "/reviews/man-red-shirt.png",
+  review6: "/reviews/man-white-shirt.png",
+  review7: "/reviews/man-blue-shirt.png",
+  review8: "/reviews/woman-black-shirt.png",
+  review9: "/reviews/woman-grey-shirt.png",
+  review10: "/reviews/woman-orange-shirt.png",
   leo: "/leo.png"
 };
 
@@ -20,29 +27,29 @@ export const REVIEWS: Review[] = [
     name: 'Nico C.',
     rating: 5,
     imageUrl: IMAGES.review1,
-    text: '"Me ayudo a una recomposicion corporal, ganando masa muscular y perdiendo grasa. Una rutina adaptada a mis necesidades y objetivos."'
+    text: '"Con el seguimiento nutricional pude lograr una recomposicion corporal, ganando masa muscular y perdiendo grasa. Un genio el Leo"'
   },
   {
     id: '2',
-    name: 'Juan C.',
+    name: 'Fabio O.',
     rating: 5,
     imageUrl: IMAGES.review2,
-    text: '"Leo me ayudo a mejorar mi tecnica y a ganar fuerza. Un genio. Ademas, me enseño a comer mejor y a cuidar mi cuerpo. Totalmente recomendado"'
+    text: '"Una masa las rutinas de Leo, me ayudaron a mejorar mi estado fisico y a sentirme mas saludable. Recomendado al 100%"'
   },
   {
     id: '3',
     name: 'Franco C.',
     rating: 5,
-    imageUrl: IMAGES.review3,
-    text: '"Con las rutinas de Leo pude ganar mucha fuerza y masa muscular, ademas de eliminar dolores que traia hace mucho tiempo. Un genio. Ademas, me enseño a elegir bien que comer y como entrenar."'
+    imageUrl: IMAGES.review4,
+    text: '"Me ayudo a la recuperacion de una lesion en el pectoral, un dolor que tuve muchos meses, se tomo el tiempo  de ayudarme en cada entrenamiento y el dolor se me fue. Un crack el Leo"'
   },
   {
     id: '4',
-    name: 'Jazmin C.',
+    name: 'Jazmin F.',
     rating: 5,
-    imageUrl: IMAGES.review3,
+    imageUrl: IMAGES.review8,
     text: '"Pude lorgrar el cambio fisico que tanto queria, y me siento mas sana y feliz. Gracias Leo!"'
-  }
+  },
 ];
 
 export const MAIN_PLAN: Plan = {
