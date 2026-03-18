@@ -10,13 +10,24 @@ const Contact: React.FC = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [modalState, setModalState] = useState<{isOpen: boolean, type: 'success' | 'error', message: string}>({
+    isOpen: false,
+    type: 'success',
+    message: ''
+  });
+
+  const showModal = (type: 'success' | 'error', message: string) => {
+    setModalState({ isOpen: true, type, message });
+    setTimeout(() => {
+      setModalState(prev => ({ ...prev, isOpen: false }));
+    }, 3000);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      // Reemplazar estos valores con tus credenciales de EmailJS
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -26,17 +37,17 @@ const Contact: React.FC = () => {
         templateId,
         {
           from_name: formData.name,
-          reply_to: formData.phone,
+          from_phone: formData.phone,
           message: formData.message,
         },
         publicKey
       );
 
-      alert('¡Gracias! Me pondré en contacto con vos pronto.');
+      showModal('success', '¡Gracias! Me pondré en contacto con vos pronto.');
       setFormData({ name: '', phone: '', message: '' });
     } catch (error) {
       console.error('Error sending email:', error);
-      alert('Hubo un problema al enviar el mensaje. Por favor, intentá de nuevo o contactame por WhatsApp.');
+      showModal('error', 'Hubo un problema al enviar el mensaje. Por favor, intentá de nuevo o contactame por WhatsApp.');
     } finally {
       setIsSubmitting(false);
     }
@@ -135,6 +146,25 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {modalState.isOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-opacity">
+          <div className={`bg-surface-dark border p-8 rounded-2xl shadow-2xl max-w-md w-full text-center transform transition-all ${modalState.type === 'success' ? 'border-primary/50' : 'border-red-500/50'}`}>
+            <div className={`mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-6 ${modalState.type === 'success' ? 'bg-primary/10 text-primary' : 'bg-red-500/10 text-red-500'}`}>
+              <span className="material-symbols-outlined text-4xl">
+                {modalState.type === 'success' ? 'check_circle' : 'error'}
+              </span>
+            </div>
+            <h3 className="text-2xl font-black uppercase text-white mb-2">
+              {modalState.type === 'success' ? '¡Mensaje Enviado!' : 'Error'}
+            </h3>
+            <p className="text-gray-400 text-lg">
+              {modalState.message}
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
